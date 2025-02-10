@@ -1,0 +1,59 @@
+﻿<Window x:Class="SquadMaster.WPFApp.Views.HomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SquadMaster.WPFApp.Views" xmlns:viewmodels="clr-namespace:SquadMaster.WPFApp.ViewModels"
+        mc:Ignorable="d" WindowState="Maximized"
+        WindowStyle="None"
+        Title="Squad Master" Height="450" Width="800" 
+        Icon="pack://application:,,,/Resources/appIcon.png">
+    <!--<Window.DataContext>
+        <viewmodels:HomeWindowViewModel />
+    </Window.DataContext>-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!-- Custom Title Bar -->
+  
+        <Grid Height="40" Background="OrangeRed">
+            <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="18">
+                Squad Master
+            </TextBlock>
+            <Button Name="closeWindowBtn" HorizontalAlignment="Right" Width="30" Margin="0,0,10,0" VerticalAlignment="Center" Content="X" Click="closeWindowBtn_Click"  Foreground="White" Background="DarkRed"/>
+        </Grid>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Row="1">
+            <TabControl Background="#e9ecef"  BorderThickness="0,1,0,0" >
+                <TabControl.Resources>
+                    <!-- TabItem Header Style -->
+                    <Style TargetType="TabItem" BasedOn="{StaticResource {x:Type TabItem}}">
+                        <Setter Property="Foreground" Value="Gray"/>
+                        <Setter Property="Background" Value="#e9ecef"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="FontSize" Value="14"/>
+                    </Style>
+
+                    <!-- TabControl Style -->
+                    <Style TargetType="TabControl">
+                        <Setter Property="TabStripPlacement" Value="Left"/>
+                        <Setter Property="Padding" Value="0"/>
+                        <Setter Property="Margin" Value="0"/>
+                    </Style>
+
+                </TabControl.Resources>
+
+                <TabItem Header="Team Generation">
+                    <local:ParticipantDataLoaderWindow />
+
+                </TabItem>
+                <TabItem Header="Match Scheduler">
+                    <TextBlock Text="Feature coming soon..." VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>
