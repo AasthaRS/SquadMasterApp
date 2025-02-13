@@ -47,8 +47,7 @@
                 </TabControl.Resources>
 
                 <TabItem Header="Team Generation">
-                    <local:ParticipantDataLoaderWindow />
-
+                    <ContentControl Content="{Binding CurrentView}" />
                 </TabItem>
                 <TabItem Header="Match Scheduler">
                     <TextBlock Text="Feature coming soon..." VerticalAlignment="Center" HorizontalAlignment="Center"/>

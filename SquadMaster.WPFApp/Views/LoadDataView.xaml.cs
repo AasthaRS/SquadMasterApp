@@ -1,8 +1,5 @@
-﻿using SquadMaster.WPFApp.Services;
-using SquadMaster.WPFApp.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,27 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SquadMaster.WPFApp.Views
 {
     /// <summary>
-    /// Interaction logic for HomeWindow.xaml
+    /// Interaction logic for LoadDataView.xaml
     /// </summary>
-    public partial class HomeWindow : Window
+    public partial class LoadDataView : UserControl
     {
-        private readonly NavigationService _navigationService;
-
-
-        public HomeWindow()
+        public LoadDataView()
         {
             InitializeComponent();
-            DataContext = new HomeWindowViewModel();
-        }
-
-        private void closeWindowBtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

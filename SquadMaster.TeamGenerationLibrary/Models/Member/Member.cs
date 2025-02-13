@@ -32,6 +32,8 @@ namespace SquadMaster.TeamGenerationLibrary.Models.Member
 
         public Department Department { get; set; }
 
+        public string Email { get; set; }
+
         // Calculate Age of the Member based on Date of Birth
         public int Age
         {
@@ -68,6 +70,7 @@ namespace SquadMaster.TeamGenerationLibrary.Models.Member
             member.AppendLine($"Preferred Games: {PreferredGames}");
             member.AppendLine($"Department: {Department}");
             member.AppendLine($"Age: {Age}");
+            member.AppendLine($"Email: {Email}");
             return member.ToString();
         }
     }
