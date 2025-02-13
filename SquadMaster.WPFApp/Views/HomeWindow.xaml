@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SquadMaster.WPFApp.Views" xmlns:viewmodels="clr-namespace:SquadMaster.WPFApp.ViewModels"
-        mc:Ignorable="d" WindowState="Maximized"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        Title="Squad Master" Height="450" Width="800" 
+        Title="Squad Master" Height="600" Width="1000" 
         Icon="pack://application:,,,/Resources/appIcon.png">
     <!--<Window.DataContext>
         <viewmodels:HomeWindowViewModel />
@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <!-- Custom Title Bar -->
   
-        <Grid Height="40" Background="OrangeRed">
+        <Grid Height="40" Background="OrangeRed" >
             <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="18">
                 Squad Master
             </TextBlock>
@@ -27,14 +27,24 @@
 
         <!-- Main Content Area -->
         <Grid Grid.Row="1">
-            <TabControl Background="#e9ecef"  BorderThickness="0,1,0,0" >
+            <TabControl  BorderThickness="0,1,0,0" >
                 <TabControl.Resources>
                     <!-- TabItem Header Style -->
                     <Style TargetType="TabItem" BasedOn="{StaticResource {x:Type TabItem}}">
                         <Setter Property="Foreground" Value="Gray"/>
-                        <Setter Property="Background" Value="#e9ecef"/>
+                        <!--<Setter Property="Background" Value="#e9ecef"/>-->
                         <Setter Property="FontWeight" Value="Bold"/>
                         <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="Padding" Value="25,10"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="SlateGray"/>
+                                <Setter Property="Foreground" Value="Gray"/>
+                                <Setter Property="BorderBrush" Value="Orange"/>
+                                <Setter Property="BorderThickness" Value="3"/>
+                            </Trigger>
+                        </Style.Triggers>
                     </Style>
 
                     <!-- TabControl Style -->

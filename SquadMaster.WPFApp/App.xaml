@@ -11,8 +11,15 @@
             <views:HomeWindow/>
         </DataTemplate>
 
+        <!-- DataTemplate for LoadDataViewModel -->
         <DataTemplate DataType="{x:Type viewModels:LoadDataViewModel}">
             <views:LoadDataView/>
         </DataTemplate>
+
+         <!--DataTemplate for TeamSetupViewModel--> 
+        <DataTemplate DataType="{x:Type viewModels:TeamSetupViewModel}">
+            <views:TeamSetupView/>
+        </DataTemplate>
+
     </Application.Resources>
 </Application>

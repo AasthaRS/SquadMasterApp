@@ -1,7 +1,5 @@
-﻿using SquadMaster.WPFApp.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,26 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SquadMaster.WPFApp.Views
 {
     /// <summary>
-    /// Interaction logic for HomeWindow.xaml
+    /// Interaction logic for TeamSetupView.xaml
     /// </summary>
-    public partial class HomeWindow : Window
+    public partial class TeamSetupView : UserControl
     {
-
-
-        public HomeWindow()
+        public TeamSetupView()
         {
             InitializeComponent();
-            DataContext = new HomeWindowViewModel();
         }
 
-        private void closeWindowBtn_Click(object sender, RoutedEventArgs e)
+        private void TextBox_OnlyNumberInput(object sender, TextCompositionEventArgs e)
         {
-            this.Close();
+
         }
     }
 }

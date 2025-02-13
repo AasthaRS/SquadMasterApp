@@ -15,7 +15,7 @@ namespace SquadMaster.TeamGenerationLibrary.Readers.FileReaders
     /// <summary>
     /// JSON File Reader
     /// </summary>
-    internal class JsonFileReader : IFileReader
+    public class JsonFileReader : IFileReader
     {
         /// <summary>
         /// Read the JSON file at specified path and parse it to list of members

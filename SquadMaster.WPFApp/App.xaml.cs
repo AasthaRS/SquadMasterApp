@@ -1,5 +1,4 @@
-﻿using SquadMaster.WPFApp.Services;
-using SquadMaster.WPFApp.ViewModels;
+﻿using SquadMaster.WPFApp.ViewModels;
 using SquadMaster.WPFApp.Views;
 using System.Configuration;
 using System.Data;

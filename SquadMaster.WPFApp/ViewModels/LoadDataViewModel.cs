@@ -11,8 +11,8 @@ using System.Windows;
 using System.IO;
 using SquadMaster.TeamGenerationLibrary.Models.Member;
 using Newtonsoft.Json;
-using SquadMaster.WPFApp.Services;
 using SquadMaster.WPFApp.Commands;
+using SquadMaster.TeamGenerationLibrary.Readers.FileReaders;
 
 namespace SquadMaster.WPFApp.ViewModels
 {
@@ -82,9 +82,8 @@ namespace SquadMaster.WPFApp.ViewModels
         {
             try
             {
-                string jsonData = File.ReadAllText(filePath);
-                var participants = JsonConvert.DeserializeObject<ObservableCollection<Member>>(jsonData);
-
+                JsonFileReader jsonFileReader = new JsonFileReader();
+                var participants = jsonFileReader.Read(filePath);
                 return participants != null && participants.Count > 0;
             }
             catch
@@ -100,7 +99,7 @@ namespace SquadMaster.WPFApp.ViewModels
 
         private void Proceed(object parameter)
         {
-            //_homeViewModel.NavigateTo(new TeamSelectionViewModel(_homeViewModel, FilePath));
+            _homeViewModel.NavigateTo(new TeamSetupViewModel(_homeViewModel, FilePath));
         }
     }
 }
